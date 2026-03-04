@@ -1,4 +1,4 @@
-# ComfyUI Workshop
+# ComfyUI Workshop - basic
 
 ComfyUI는 생성형 AI를 위한 노드 기반 인터페이스 및 추론 엔진입니다.
 
