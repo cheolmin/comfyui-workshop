@@ -4,6 +4,8 @@
 
 ControlNet은 참조 이미지를 AI가 이해할 수 있는 지시로 변환하는 **"번역 도우미"**입니다. 이미지의 구조, 포즈, 윤곽선 등을 정밀하게 제어할 수 있게 해줍니다.
 
+\![OpenPose ControlNet 결과 예시 - 입력에서 전처리, 생성 결과까지의 과정](../images/controlnet/openpose-result.jpg)
+
 ### ControlNet의 핵심 개념
 
 - **구조 제어**: 참조 이미지의 구조를 유지하면서 새로운 이미지 생성
@@ -45,6 +47,8 @@ ControlNet은 참조 이미지를 AI가 이해할 수 있는 지시로 변환하
 1. 기본 txt2img 워크플로우 로드
 2. Load Checkpoint, CLIP Text Encode, KSampler, VAE Decode 노드 확인
 
+\![비교용 텍스트-이미지 기본 워크플로우](../images/controlnet/text2img-workflow.jpg)
+
 ### Step 2: Load ControlNet Model 노드 추가
 1. 캔버스에서 더블클릭 → "Load ControlNet Model" 검색
 2. 노드 추가 후 `control_v11p_sd15_openpose.pth` 선택
@@ -59,10 +63,14 @@ ControlNet은 참조 이미지를 AI가 이해할 수 있는 지시로 변환하
 3. **Load Image의 IMAGE 출력** → **Apply ControlNet의 image 입력**
 4. **Apply ControlNet의 CONDITIONING 출력** → **KSampler의 positive 입력**
 
+\![SD1.5 ControlNet 기본 워크플로우 스크린샷](../images/controlnet/controlnet-basic-workflow.jpg)
+
 ### Step 5: 참조 이미지 로드
 1. **Load Image** 노드 추가
 2. OpenPose 전처리된 참조 이미지 업로드
    - 예: 흰색 배경에 스켈레톤 라인이 그려진 이미지
+
+\![Openpose로 전처리된 참조 이미지](../images/controlnet/openpose-preprocessed.png)
 
 ### Step 6: 강도(strength) 조정
 - Apply ControlNet 노드의 `strength` 값 조정:
@@ -79,6 +87,8 @@ Negative: ugly, deformed, bad anatomy, blurry
 
 Queue Prompt 클릭하여 실행
 
+\![Empty Latent Image 크기 변경에 따른 결과 비교](../images/controlnet/controlnet-change-size.jpg)
+
 ## 실습 2: 전처리기 사용 ControlNet
 
 일반 사진을 OpenPose로 자동 변환하여 사용하는 방법입니다.
@@ -93,6 +103,8 @@ Queue Prompt 클릭하여 실행
 1. **Load Image** 노드 추가
 2. 일반 인물 사진 업로드 (포즈가 명확한 사진)
 
+\![OpenPose ControlNet 입력 이미지 예시](../images/controlnet/openpose-input.jpg)
+
 ### Step 3: OpenPose Preprocessor 노드 추가
 1. 캔버스에서 더블클릭
 2. "OpenPose Pose" 검색 (또는 "DWPose Estimator")
@@ -101,6 +113,8 @@ Queue Prompt 클릭하여 실행
 ### Step 4: 전처리기 연결
 1. **Load Image의 IMAGE 출력** → **OpenPose Pose의 image 입력**
 2. **OpenPose Pose의 IMAGE 출력** → **Apply ControlNet의 image 입력**
+
+\![SD1.5 OpenPose ControlNet 전처리기 워크플로우](../images/controlnet/openpose-workflow.jpg)
 
 ### Step 5: 전처리기 설정
 OpenPose Pose 노드 설정:
@@ -139,6 +153,8 @@ Negative: blurry, distorted, low quality
 **전처리기**: Canny Edge Preprocessor
 - `low_threshold`: 100
 - `high_threshold`: 200
+
+\![ControlNet 전처리기 예시 - Canny Edge](../images/controlnet/preprocessor.jpg)
 
 ### 2. Depth Control
 **용도**: 깊이감 있는 이미지 생성, 전경/배경 분리
@@ -257,6 +273,8 @@ Negative: messy lines, blurry, photo realistic, western cartoon
 - ComfyUI Wiki ControlNet 가이드: https://comfyui-wiki.com/ko/tutorial/advanced/how-to-install-and-use-controlnet-models-in-comfyui
 - ControlNet 공식 GitHub: https://github.com/lllyasviel/ControlNet
 - Hugging Face ControlNet 모델: https://huggingface.co/lllyasviel/ControlNet-v1-1
+
+> 이미지 출처: [ComfyUI Wiki](https://comfyui-wiki.com)
 
 ## 다음 단계
 

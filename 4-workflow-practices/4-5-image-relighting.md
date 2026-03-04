@@ -2,6 +2,9 @@
 
 ## LBM(Latent Bridge Matching) 소개
 
+![LBM Relighting 효과 시연](../images/relighting/lbm-effect.jpg)
+*LBM Relighting으로 피사체의 조명을 배경 환경에 맞게 자연스럽게 변환한 예시*
+
 LBM은 잠재 공간의 Bridge Matching을 활용하여 빠른 이미지 변환을 지원하는 기술입니다.
 
 ### 주요 특징
@@ -39,6 +42,9 @@ Model Manager에서 "lbm" 검색 → `LBM_relighting.safetensors` 다운로드
    - 워크플로우 JSON 다운로드 후 ComfyUI에 로드
    - 또는 [comfyui-wiki.com](https://comfyui-wiki.com/ko/tutorial/advanced/image/relighting/lbm-relighting) 참조
 
+![LBM Relighting 워크플로우](../images/relighting/lbm-workflow.png)
+*ComfyUI에서의 LBM Relighting 워크플로우 전체 구성*
+
 2. **커스텀 노드 설치**
    - Comfy Manager → Custom Nodes Manager
    - 위 노드들 검색 및 설치
@@ -54,8 +60,14 @@ Model Manager에서 "lbm" 검색 → `LBM_relighting.safetensors` 다운로드
 5. **배경 이미지 업로드**
    - Upload Background 그룹의 Load Image 노드에 배경 이미지 업로드
 
+![배경 이미지 예시](../images/relighting/background.jpg)
+*배경 이미지 예시 - 새로운 조명 환경을 제공하는 배경*
+
 6. **피사체 이미지 업로드**
    - Upload Subject 그룹의 Load Image 노드에 피사체(전경) 이미지 업로드
+
+![피사체 이미지 예시](../images/relighting/subject.jpg)
+*피사체(전경) 이미지 예시 - 조명이 변경될 대상*
 
 7. **합성 위치 조정 (선택사항)**
    - ImageCompositeMasked 노드의 xy 위치에서 합성 위치 조정
@@ -71,6 +83,9 @@ Model Manager에서 "lbm" 검색 → `LBM_relighting.safetensors` 다운로드
 10. **결과 확인**
     - 이미지 미리보기 확인
     - Image Comparer로 원본 대비 결과 비교
+
+![단계별 가이드](../images/relighting/step-guide.jpg)
+*LBM Relighting 전체 단계별 가이드*
 
 ## 활용 사례
 

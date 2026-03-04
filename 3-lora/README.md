@@ -1,5 +1,7 @@
 # #3. LoRA 설명 및 실습
 
+![ComfyUI에서 LoRA 사용하기](../images/wan22/lora-cover.jpg)
+
 ## LoRA란 무엇인가?
 
 LoRA(Low-Rank Adaptation)는 기존 체크포인트 모델을 교체하지 않고 특정 스타일이나 캐릭터를 추가할 수 있는 경량 모델입니다.
@@ -146,3 +148,5 @@ LoRA를 마스터했다면 다음 주제로 넘어갑니다:
 - **ControlNet**: 이미지 구조와 포즈 제어
 - **IP-Adapter**: 스타일 참조 이미지 활용
 - **Upscaling**: 고해상도 이미지 생성
+
+> 이미지 출처: [ComfyUI Wiki](https://comfyui-wiki.com)

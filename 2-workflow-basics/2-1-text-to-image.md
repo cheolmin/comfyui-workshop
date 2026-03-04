@@ -2,6 +2,18 @@
 
 Text-to-Image는 텍스트 프롬프트만으로 새로운 이미지를 생성하는 가장 기본적인 워크플로우입니다.
 
+## 빌트인 워크플로우 불러오기
+
+ComfyUI에는 기본 제공되는 워크플로우 템플릿이 있습니다. 좌측 **Workflow** 패널을 열어 빌트인 워크플로우를 확인할 수 있습니다.
+
+![워크플로우 패널 열기](../images/txt2img/workflow-1.jpg)
+
+**Image Generation** 카테고리에서 **Text to Image** 워크플로우를 선택하면 기본 Text-to-Image 워크플로우가 자동으로 로드됩니다.
+
+![텍스트-이미지 워크플로우 선택](../images/txt2img/workflow-2-text2img.jpg)
+
+> **Tip:** 빌트인 워크플로우를 사용하면 아래의 수동 구성 과정을 건너뛸 수 있습니다. 하지만 각 노드의 역할을 이해하기 위해 아래 단계별 가이드를 따라해 보는 것을 권장합니다.
+
 ## 워크플로우 구성
 
 ### 1단계: 빈 캔버스 준비
@@ -112,6 +124,10 @@ KSampler는 노이즈 제거를 수행하는 핵심 노드입니다.
 
 모델이 없는 경우 다운로드가 필요합니다.
 
+워크플로우를 불러왔을 때 필요한 모델이 설치되어 있지 않으면 아래와 같은 알림이 표시됩니다:
+
+![모델 없음 알림](../images/txt2img/workflow-3-missing-models.jpg)
+
 **Manager를 통한 다운로드:**
 
 1. 우측 **Manager** 버튼 클릭
@@ -167,6 +183,10 @@ text, watermark
 
 ![Queue Prompt 버튼](../.gitbook/assets/image&#32;(37).png)
 
+**Load Checkpoint** 노드에서 원하는 모델을 선택하고 **Run** 버튼을 눌러 이미지를 생성합니다.
+
+![모델 선택 및 이미지 생성](../images/txt2img/workflow-4-gen-img.jpg)
+
 생성 과정이 진행되며 각 노드가 순차적으로 실행됩니다.
 
 ![생성 진행 중](../.gitbook/assets/image&#32;(38).png)
@@ -174,6 +194,8 @@ text, watermark
 완료되면 **Preview Image** 노드에 생성된 이미지가 표시됩니다.
 
 ![생성된 이미지](../.gitbook/assets/image&#32;(39).png)
+
+![이미지 생성 결과](../images/txt2img/workflow-5-output.jpg)
 
 ## 파라미터 조정
 
@@ -233,3 +255,5 @@ text, watermark
 ## 다음 단계
 
 Text-to-Image 워크플로우를 익혔다면 [Image-to-Image Workflow](2-2-image-to-image.md)로 이동하여 기존 이미지를 변형하는 방법을 학습하세요.
+
+> 이미지 출처: [ComfyUI Wiki](https://comfyui-wiki.com)
