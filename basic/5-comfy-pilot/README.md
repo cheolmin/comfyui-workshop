@@ -1,73 +1,109 @@
-# #5. Demos - Comfypilot
+# #5. Demos - Comfy-pilot
 
-## 학습 목표
-이 데모를 완료하면 다음을 할 수 있습니다:
-- Comfy-pilot의 개념과 활용 방법 이해하기
-- Claude Code와 ComfyUI의 통합 환경 경험하기
-- 자연어로 워크플로우를 생성하고 편집하는 방법 익히기
-
-## 소요 시간
-약 10분 (선택사항)
-
-## 난이도
-★☆☆ (체험용 데모)
-
-> **주의**: 이 섹션은 **선택 사항**입니다. Comfy-pilot은 고급 사용자를 위한 도구이며, 기본 ComfyUI 워크플로우 학습에는 필수가 아닙니다. 워크플로우 자동화에 관심이 있거나, AI 어시스턴트로 작업하고 싶을 때 시도해보세요.
+> **주의**: 이 섹션은 **선택 사항**입니다. Comfy-pilot은 ComfyUI 워크플로우 관리를 더 쉽게 만들어주는 도구이며, 기본 ComfyUI 워크플로우 학습에는 필수가 아닙니다. 워크플로우 자동화에 관심이 있을 때 시도해보세요.
 
 ## Comfy-pilot이란?
 
-**Comfy Pilot**은 Claude Code와 ComfyUI를 연결하는 **MCP 서버 + 내장 터미널** 커스텀 노드입니다. ComfyUI 안에서 자연어로 워크플로우를 생성/편집/실행할 수 있게 해줍니다.
+**Comfy-pilot**은 ComfyUI를 위한 AI 어시스턴트 애플리케이션입니다. 자연어로 대화하면서 워크플로우를 생성하고 수정할 수 있어, 프로그래밍 지식 없이도 손쉽게 ComfyUI를 활용할 수 있게 해줍니다.
 
-**핵심 기능:**
+**핵심 특징:**
 
-* **MCP 서버**: Claude Code가 워크플로우를 직접 조회, 편집, 실행
-* **내장 터미널**: ComfyUI 안에 xterm.js 기반 Claude Code 터미널 탑재
-* **이미지 뷰잉**: Claude가 Preview/Save Image 노드의 출력을 직접 확인
-* **그래프 편집**: 노드 생성/삭제/이동/연결을 프로그래밍 방식으로 처리
-* **모델 다운로드**: HuggingFace, CivitAI에서 모델 직접 다운로드
+* **자연어 워크플로우 관리**: 복잡한 노드 구성 없이 대화로 워크플로우 생성/수정
+* **AI 에이전트 지원**: Claude, Gemini 등 다양한 AI 모델과 대화 가능
+* **스마트 컨텍스트**: 사용 중인 AI 모델 크기에 맞춰 자동으로 컨텍스트 최적화
+* **워크플로우 검증**: 생성된 워크플로우를 자동으로 검증하고 오류 수정
+* **지식 기반 시스템**: ComfyUI 노드와 워크플로우에 대한 내장 지식으로 정확한 결과 제공
 
 **사용 예시:**
 
-* "SDXL + ControlNet 워크플로우 만들어줘"
-* "프리뷰 이미지 보고 디테일 높여줘"
-* "FLUX schnell 모델 다운받고 워크플로우 세팅해줘"
+* "고양이 사진을 만드는 기본 워크플로우 만들어줘"
+* "현재 워크플로우에 업스케일러 추가해줘"
+* "LoRA를 적용하는 스텝을 추가해줘"
+* "하루 일정 관리 워크플로우를 만들어줘"
 
 ### Comfy-pilot이 유용한 경우
 
-- **워크플로우 자동화**: 반복적인 노드 배치를 자동화하고 싶을 때
-- **빠른 실험**: 다양한 모델과 설정을 빠르게 테스트하고 싶을 때
-- **학습 보조**: AI가 워크플로우를 설명하고 추천해주길 원할 때
-- **모델 관리**: 여러 모델을 자동으로 다운로드하고 관리하고 싶을 때
+- **빠른 워크플로우 생성**: 노드를 하나하나 연결하지 않고 대화로 바로 생성
+- **워크플로우 수정**: 기존 워크플로우에 단계를 추가하거나 변경할 때
+- **학습 보조**: AI에게 현재 워크플로우를 설명해달라고 요청 가능
+- **오류 수정**: 워크플로우 문제를 자동으로 감지하고 수정 제안
 
-> **초보자 팁**: Comfy-pilot은 ComfyUI에 어느 정도 익숙해진 후에 시도하세요. 기본 워크플로우를 손으로 구성하는 경험이 있어야 AI 어시스턴트의 도움을 효과적으로 활용할 수 있습니다.
+> Comfy-pilot은 ComfyUI에 어느 정도 익숙해진 후에 시도하는 것이 좋습니다. 기본 워크플로우를 손으로 구성하는 경험이 있어야 AI 어시스턴트의 도움을 효과적으로 활용할 수 있습니다.
 
 ***
 
-#### 설치 방법
+## 시스템 요구사항
 
-**방법 1 - CLI (권장):**
+| 항목 | 최소 사양 |
+|------|----------|
+| **운영체제** | Windows 10+, macOS Catalina (10.15)+, Linux |
+| **메모리** | 4 GB RAM 이상 |
+| **저장공간** | 100 MB 이상 |
+| **인터넷** | 다운로드 및 업데이트에 필요 |
 
-```bash
-comfy node install comfy-pilot
-```
+***
 
-**방법 2 - ComfyUI Manager:**
+## 설치 방법
 
-1. ComfyUI에서 **Manager** → **Install Custom Nodes** 클릭
-2. `Comfy Pilot` 검색
-3. **Install** 클릭
-4. ComfyUI 재시작
+### Step 1: 다운로드
 
-**방법 3 - Git Clone:**
+[Comfy-pilot 다운로드 페이지](https://github.com/victorcascales22/comfy-pilot)에서 최신 버전을 다운로드합니다.
 
-```bash
-cd ~/Documents/ComfyUI/custom_nodes && git clone https://github.com/ConstantineB6/comfy-pilot.git
-```
+### Step 2: 설치
 
-> Claude Code CLI가 없으면 자동 설치됩니다.
+| 운영체제 | 설치 방법 |
+|---------|----------|
+| **Windows** | `.exe` 파일 더블 클릭 → 안내에 따라 설치 |
+| **Mac** | `.dmg` 파일 열기 → Applications 폴더로 드래그 |
+| **Linux** | 패키지 압축 해제 → README 지침에 따라 설치 |
 
+### Step 3: 실행
 
+다운로드한 파일을 실행합니다. 인터넷에서 다운로드한 파일 경고가 나올 수 있으며, 신뢰할 수 있는 소스이므로 실행을 허용합니다.
+
+***
 
 ## 데모
 
-{% embed url="https://private-user-images.githubusercontent.com/90444271/550379895-325b1194-2334-48a1-94c3-86effd1fef02.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzI2MDYyNzUsIm5iZiI6MTc3MjYwNTk3NSwicGF0aCI6Ii85MDQ0NDI3MS81NTAzNzk4OTUtMzI1YjExOTQtMjMzNC00OGExLTk0YzMtODZlZmZkMWZlZjAyLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzA0VDA2MzI1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTRkMTA0MzdkNzM0MDgzNTAyOGJjZWZjZWYzM2RlOTU4ODdlYjg4ZTRlYTRiODdkMmJhMWIyMGQ2NDRkZDgyY2ImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Mo34xMUkIWVYGsFz9arsQyEhK9RY6SEp7t66avS73Lo" %}
+아래 영상은 Comfy-pilot을 활용하여 자연어로 워크플로우를 생성하는 과정을 보여줍니다.
+
+{% embed url="../../.gitbook/assets/comfy-pilot-demo.mp4" %}
+
+***
+
+## 사용 방법
+
+### 1. 새 워크플로우 생성
+
+자연어로 원하는 워크플로우를 설명합니다.
+
+```
+"프로젝트의 작업을 관리하는 워크플로우를 만들어줘"
+```
+
+### 2. 기존 워크플로우 수정
+
+변경할 워크플로우를 지정하고 수정 사항을 설명합니다.
+
+```
+"하루 마지막에 작업 검토 단계를 추가해줘"
+```
+
+### 3. 도움 요청
+
+명령어 작성이 어렵다면 "Help"를 입력하여 사용 가능한 명령 형식과 옵션을 안내받을 수 있습니다.
+
+## 트러블슈팅
+
+| 문제 | 해결책 |
+|------|-------|
+| **파일이 열리지 않음** | 시스템 요구사항 확인. 파일을 다시 다운로드 |
+| **시작 화면에서 멈춤** | 앱을 종료 후 재실행. 인터넷 연결 확인 |
+| **앱이 충돌/멈춤** | 다른 앱을 닫아 메모리 확보. OS 업데이트 확인 |
+
+추가 지원이 필요하면 [GitHub Issues](https://github.com/victorcascales22/comfy-pilot/issues)에 문의하세요.
+
+## 참조
+
+* GitHub 레포지토리: https://github.com/victorcascales22/comfy-pilot
+* 라이선스: GPL-3.0 (ComfyUI 호환)
