@@ -75,7 +75,11 @@ Qwen Image Edit 2511을 사용하기 위해 필요한 모델 파일:
 
 **Edit 모델 (v2509) 워크플로우:**
 
-![ComfyUI 공식 Qwen Image Edit 워크플로우](../../.gitbook/assets/qwen_image_edit_2509_basic_example.png)
+![ComfyUI 공식 Qwen Image Edit v2509 워크플로우](../../.gitbook/assets/qwen_image_edit_2509_basic_example.png)
+
+**Edit 모델 (초기 버전) 워크플로우:**
+
+![ComfyUI 공식 Qwen Image Edit 초기 버전 워크플로우](../../.gitbook/assets/qwen_image_edit_basic_example.png)
 
 > 위 이미지를 다운로드하여 ComfyUI 캔버스에 드래그하면 워크플로우가 자동으로 로드됩니다.
 

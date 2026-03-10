@@ -184,6 +184,12 @@ VRAM이 부족하거나 빠른 업스케일링이 필요한 경우 **Ultrasharp 
 
 ![확대 모델 사용 워크플로우](../../.gitbook/assets/upscale-model-workflow.jpg)
 
+### ComfyUI 공식 ESRGAN 업스케일 워크플로우
+
+아래는 ComfyUI 공식 예제의 ESRGAN 업스케일 워크플로우입니다. 이 이미지를 ComfyUI에 드래그하면 워크플로우를 바로 불러올 수 있습니다.
+
+![ComfyUI 공식 ESRGAN 업스케일 워크플로우](../../.gitbook/assets/esrgan_example.png)
+
 ***
 
 ## 방식별 비교 요약
