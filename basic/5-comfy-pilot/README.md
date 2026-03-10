@@ -128,8 +128,53 @@ cd ~/Documents/ComfyUI/custom_nodes && git clone https://github.com/ConstantineB
 | **MCP 서버 연결 안 됨** | ComfyUI 콘솔에서 에러 확인. `~/.claude.json`에 MCP 설정 수동 추가 |
 | **터미널 연결 끊김** | 터미널의 ↻ 버튼 클릭하여 재연결 |
 
+***
+
+## Amazon Bedrock으로 사용하기
+
+이 워크샵에서는 AWS 환경에서 운영하므로, Claude Code를 Anthropic API 대신 **Amazon Bedrock**을 통해 사용할 수 있습니다.
+
+### 환경변수 설정
+
+ComfyUI를 시작하기 전에 다음 환경변수를 설정합니다.
+
+```bash
+export CLAUDE_CODE_USE_BEDROCK=1
+export AWS_REGION=us-west-2
+```
+
+SageMaker 환경에서는 IAM Role을 통해 AWS 자격증명이 자동으로 제공되므로 별도의 Access Key 설정이 필요 없습니다.
+
+특정 프로필을 사용해야 하는 경우:
+
+```bash
+export AWS_PROFILE=your-profile-name
+```
+
+### 필요한 IAM 권한
+
+Bedrock을 통해 Claude를 호출하려면 IAM Role에 다음 권한이 필요합니다.
+
+```json
+{
+    "Effect": "Allow",
+    "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+    ],
+    "Resource": "arn:aws:bedrock:*::foundation-model/anthropic.*"
+}
+```
+
+### 확인 방법
+
+환경변수 설정 후 ComfyUI를 재시작하면, Comfy Pilot 내장 터미널에서 실행되는 Claude Code가 자동으로 Bedrock을 통해 호출됩니다. MCP 서버 쪽은 별도 수정이 필요 없습니다.
+
+***
+
 ## 참조
 
 * GitHub 레포지토리: https://github.com/ConstantineB6/comfy-pilot
 * ComfyUI Registry: https://registry.comfy.org/publishers/constantine/nodes/comfy-pilot
+* Claude Code with Bedrock: https://docs.anthropic.com/en/docs/claude-code/bedrock-vertex
 * 라이선스: MIT
