@@ -1,9 +1,9 @@
 # Table of contents
 
-* [0. Setup](README.md)
+* [ComfyUI Workshop](README.md)
   * [#0-0. Prerequisites](0.-setup/0-prerequisites.md)
   * [#0-1. Setup](0.-setup/1-setup.md)
-* [1. ComfyUI Workshop - basic](<README (1).md>)
+* [1. ComfyUI Workshop - Basic](basic/README.md)
   * [#1-1. Workflow 알아보기](basic/2-workflow-basics/README.md)
     * [#1-1-1. Text-to-Image](basic/2-workflow-basics/2-1-text-to-image.md)
     * [#1-1-2. Image-to-Image](basic/2-workflow-basics/2-2-image-to-image.md)
