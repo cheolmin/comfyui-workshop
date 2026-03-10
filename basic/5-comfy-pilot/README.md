@@ -1,71 +1,62 @@
-# #5. Demos - Comfy-pilot
+# #5. Demos - Comfypilot
 
-> **주의**: 이 섹션은 **선택 사항**입니다. Comfy-pilot은 ComfyUI 워크플로우 관리를 더 쉽게 만들어주는 도구이며, 기본 ComfyUI 워크플로우 학습에는 필수가 아닙니다. 워크플로우 자동화에 관심이 있을 때 시도해보세요.
+> **주의**: 이 섹션은 **선택 사항**입니다. Comfy Pilot은 Claude Code와 ComfyUI를 연결하는 고급 도구이며, 기본 워크플로우 학습에는 필수가 아닙니다.
 
-## Comfy-pilot이란?
+## Comfy Pilot이란?
 
-**Comfy-pilot**은 ComfyUI를 위한 AI 어시스턴트 애플리케이션입니다. 자연어로 대화하면서 워크플로우를 생성하고 수정할 수 있어, 프로그래밍 지식 없이도 손쉽게 ComfyUI를 활용할 수 있게 해줍니다.
+**Comfy Pilot**은 Claude Code와 ComfyUI를 연결하는 **MCP 서버 + 내장 터미널** 커스텀 노드입니다. ComfyUI 안에서 자연어로 워크플로우를 생성, 편집, 실행할 수 있게 해줍니다.
 
-**핵심 특징:**
+**핵심 기능:**
 
-* **자연어 워크플로우 관리**: 복잡한 노드 구성 없이 대화로 워크플로우 생성/수정
-* **AI 에이전트 지원**: Claude, Gemini 등 다양한 AI 모델과 대화 가능
-* **스마트 컨텍스트**: 사용 중인 AI 모델 크기에 맞춰 자동으로 컨텍스트 최적화
-* **워크플로우 검증**: 생성된 워크플로우를 자동으로 검증하고 오류 수정
-* **지식 기반 시스템**: ComfyUI 노드와 워크플로우에 대한 내장 지식으로 정확한 결과 제공
+* **MCP 서버**: Claude Code가 워크플로우를 직접 조회, 편집, 실행
+* **내장 터미널**: ComfyUI 안에 xterm.js 기반 Claude Code 터미널 탑재
+* **이미지 뷰잉**: Claude가 Preview/Save Image 노드의 출력을 직접 확인
+* **그래프 편집**: 노드 생성/삭제/이동/연결을 프로그래밍 방식으로 처리
+* **모델 다운로드**: HuggingFace, CivitAI에서 모델 직접 다운로드
 
 **사용 예시:**
 
-* "고양이 사진을 만드는 기본 워크플로우 만들어줘"
-* "현재 워크플로우에 업스케일러 추가해줘"
-* "LoRA를 적용하는 스텝을 추가해줘"
-* "하루 일정 관리 워크플로우를 만들어줘"
-
-### Comfy-pilot이 유용한 경우
-
-- **빠른 워크플로우 생성**: 노드를 하나하나 연결하지 않고 대화로 바로 생성
-- **워크플로우 수정**: 기존 워크플로우에 단계를 추가하거나 변경할 때
-- **학습 보조**: AI에게 현재 워크플로우를 설명해달라고 요청 가능
-- **오류 수정**: 워크플로우 문제를 자동으로 감지하고 수정 제안
-
-> Comfy-pilot은 ComfyUI에 어느 정도 익숙해진 후에 시도하는 것이 좋습니다. 기본 워크플로우를 손으로 구성하는 경험이 있어야 AI 어시스턴트의 도움을 효과적으로 활용할 수 있습니다.
-
-***
-
-## 시스템 요구사항
-
-| 항목 | 최소 사양 |
-|------|----------|
-| **운영체제** | Windows 10+, macOS Catalina (10.15)+, Linux |
-| **메모리** | 4 GB RAM 이상 |
-| **저장공간** | 100 MB 이상 |
-| **인터넷** | 다운로드 및 업데이트에 필요 |
+* "SDXL + ControlNet 워크플로우 만들어줘"
+* "프리뷰 이미지 보고 디테일 높여줘"
+* "FLUX schnell 모델 다운받고 워크플로우 세팅해줘"
 
 ***
 
 ## 설치 방법
 
-### Step 1: 다운로드
+**방법 1 - CLI (권장):**
 
-[Comfy-pilot 다운로드 페이지](https://github.com/victorcascales22/comfy-pilot)에서 최신 버전을 다운로드합니다.
+```bash
+comfy node install comfy-pilot
+```
 
-### Step 2: 설치
+**방법 2 - ComfyUI Manager:**
 
-| 운영체제 | 설치 방법 |
-|---------|----------|
-| **Windows** | `.exe` 파일 더블 클릭 → 안내에 따라 설치 |
-| **Mac** | `.dmg` 파일 열기 → Applications 폴더로 드래그 |
-| **Linux** | 패키지 압축 해제 → README 지침에 따라 설치 |
+1. ComfyUI에서 **Manager** → **Install Custom Nodes** 클릭
+2. `Comfy Pilot` 검색
+3. **Install** 클릭
+4. ComfyUI 재시작
 
-### Step 3: 실행
+**방법 3 - Git Clone:**
 
-다운로드한 파일을 실행합니다. 인터넷에서 다운로드한 파일 경고가 나올 수 있으며, 신뢰할 수 있는 소스이므로 실행을 허용합니다.
+```bash
+cd ~/Documents/ComfyUI/custom_nodes && git clone https://github.com/ConstantineB6/comfy-pilot.git
+```
+
+> Claude Code CLI가 설치되어 있지 않으면 자동으로 설치됩니다.
+
+***
+
+## 요구사항
+
+* ComfyUI
+* Python 3.8+
 
 ***
 
 ## 데모
 
-아래 영상은 Comfy-pilot을 활용하여 자연어로 워크플로우를 생성하는 과정을 보여줍니다.
+아래 영상은 Comfy Pilot을 활용하여 자연어로 워크플로우를 생성하는 과정을 보여줍니다.
 
 {% embed url="https://github.com/cheolmin/comfyui-workshop/raw/main/.gitbook/assets/comfy-pilot-demo.mp4" %}
 
@@ -73,37 +64,72 @@
 
 ## 사용 방법
 
-### 1. 새 워크플로우 생성
+1. ComfyUI 재시작 후 우측 상단에 Claude Code 터미널이 표시됨
+2. MCP 서버는 자동으로 설정됨
+3. Claude에게 워크플로우 관련 작업을 요청:
+   * "현재 워크플로우에 어떤 노드가 있어?"
+   * "체크포인트 로더에 KSampler 노드를 연결해줘"
+   * "프리뷰 이미지를 보고 뭐가 보이는지 말해줘"
+   * "노드 5번까지 워크플로우 실행해줘"
 
-자연어로 원하는 워크플로우를 설명합니다.
+## MCP 도구 목록
+
+| 도구 | 설명 |
+|------|------|
+| `get_workflow` | 브라우저에서 현재 워크플로우 가져오기 |
+| `summarize_workflow` | 워크플로우 요약 |
+| `get_node_types` | 사용 가능한 노드 타입 검색 |
+| `get_node_info` | 특정 노드 타입 상세 정보 |
+| `get_status` | 큐 상태, 시스템 정보, 실행 이력 |
+| `run` | 워크플로우 실행 또는 중단 |
+| `edit_graph` | 노드 생성, 삭제, 이동, 연결, 설정 |
+| `view_image` | Preview/Save Image 노드 출력 이미지 보기 |
+| `search_custom_nodes` | ComfyUI Manager 레지스트리에서 커스텀 노드 검색 |
+| `install_custom_node` | 커스텀 노드 설치 |
+| `download_model` | HuggingFace, CivitAI 등에서 모델 다운로드 |
+
+***
+
+## 아키텍처
 
 ```
-"프로젝트의 작업을 관리하는 워크플로우를 만들어줘"
+┌─────────────────────────────────────────────────────┐
+│  Browser (ComfyUI)                                  │
+│  ┌─────────────────┐  ┌──────────────────────────┐  │
+│  │  xterm.js       │  │  Workflow State          │  │
+│  │  Terminal       │  │  (synced to backend)     │  │
+│  └────────┬────────┘  └────────────┬─────────────┘  │
+│           │ WebSocket              │ REST API       │
+└───────────┼────────────────────────┼────────────────┘
+            │                        │
+            ▼                        ▼
+┌─────────────────────────────────────────────────────┐
+│  ComfyUI Server                                     │
+│  ┌─────────────────┐  ┌──────────────────────────┐  │
+│  │  PTY Process    │  │  Plugin Endpoints        │  │
+│  │  (claude CLI)   │  │  /claude-code/*          │  │
+│  └─────────────────┘  └──────────────────────────┘  │
+└─────────────────────────────────────────────────────┘
+            │                        │
+            │                        ▼
+            │           ┌──────────────────────────┐
+            └──────────▶│  MCP Server              │
+                        │  (stdio transport)       │
+                        └──────────────────────────┘
 ```
 
-### 2. 기존 워크플로우 수정
-
-변경할 워크플로우를 지정하고 수정 사항을 설명합니다.
-
-```
-"하루 마지막에 작업 검토 단계를 추가해줘"
-```
-
-### 3. 도움 요청
-
-명령어 작성이 어렵다면 "Help"를 입력하여 사용 가능한 명령 형식과 옵션을 안내받을 수 있습니다.
+***
 
 ## 트러블슈팅
 
 | 문제 | 해결책 |
 |------|-------|
-| **파일이 열리지 않음** | 시스템 요구사항 확인. 파일을 다시 다운로드 |
-| **시작 화면에서 멈춤** | 앱을 종료 후 재실행. 인터넷 연결 확인 |
-| **앱이 충돌/멈춤** | 다른 앱을 닫아 메모리 확보. OS 업데이트 확인 |
-
-추가 지원이 필요하면 [GitHub Issues](https://github.com/victorcascales22/comfy-pilot/issues)에 문의하세요.
+| **"Command 'claude' not found"** | Claude Code CLI 설치: `curl -fsSL https://claude.ai/install.sh \| bash` |
+| **MCP 서버 연결 안 됨** | ComfyUI 콘솔에서 에러 확인. `~/.claude.json`에 MCP 설정 수동 추가 |
+| **터미널 연결 끊김** | 터미널의 ↻ 버튼 클릭하여 재연결 |
 
 ## 참조
 
-* GitHub 레포지토리: https://github.com/victorcascales22/comfy-pilot
-* 라이선스: GPL-3.0 (ComfyUI 호환)
+* GitHub 레포지토리: https://github.com/ConstantineB6/comfy-pilot
+* ComfyUI Registry: https://registry.comfy.org/publishers/constantine/nodes/comfy-pilot
+* 라이선스: MIT
