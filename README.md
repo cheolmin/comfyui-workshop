@@ -123,6 +123,6 @@ Stable Diffusion의 기본 개념부터 다양한 이미지/비디오 생성 워
 
 ## AWS Samples
 
-* [ComfyUI on ECS](https://github.com/aws-samples/cost-effective-aws-deployment-of-comfyui)
+* [ComfyUI on ECS](https://github.com/cheolmin/cost-effective-aws-deployment-of-comfyui)
 * [ComfyUI on EKS](https://github.com/aws-samples/comfyui-on-eks)
 * [ComfyUI on SageMaker](https://github.com/aws-samples/comfyui-on-amazon-sagemaker)

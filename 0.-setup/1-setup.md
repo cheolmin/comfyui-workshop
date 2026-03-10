@@ -6,7 +6,7 @@
 
 이 가이드에서는 AWS CDK를 사용하여 ECS 기반 ComfyUI를 배포하는 방법을 단계별로 안내합니다.
 
-**GitHub Repository**: [https://github.com/aws-samples/cost-effective-aws-deployment-of-comfyui](https://github.com/aws-samples/cost-effective-aws-deployment-of-comfyui)
+**GitHub Repository**: [https://github.com/cheolmin/cost-effective-aws-deployment-of-comfyui](https://github.com/cheolmin/cost-effective-aws-deployment-of-comfyui)
 
 ## 배포 단계
 
@@ -21,7 +21,7 @@ SageMaker Studio 내에서 새 터미널을 엽니다.
 ### 3단계: 리포지토리 클론
 
 ```bash
-git clone https://github.com/aws-samples/cost-effective-aws-deployment-of-comfyui.git
+git clone https://github.com/cheolmin/cost-effective-aws-deployment-of-comfyui.git
 cd cost-effective-aws-deployment-of-comfyui
 ```
 
