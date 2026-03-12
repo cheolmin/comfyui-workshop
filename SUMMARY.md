@@ -36,3 +36,4 @@
   * [#2-3. 3DGS 씬 재생성 및 수정](advanced/3-3dgs.md)
   * [#2-4-1. Image 2 Video (LTX2)](advanced/4-1-ltx-video.md)
   * [#2-4-2. Audio + Text 2 Video (Qwen TTS + LTX2)](advanced/4-2-qwen-tts-ltx-2.md)
+* [리소스 제거](deletion-guide.md)
