@@ -102,6 +102,16 @@ Portrait of a young woman with long hair, soft lighting, professional photograph
 
 
 
+z-image는 한글 프롬프트도 가능합니다. 테스트해보세요.
+
+```
+꽃과 나비
+```
+
+<figure><img src="../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+
+
+
 아래는 생성 예시입니다.
 
 ```
