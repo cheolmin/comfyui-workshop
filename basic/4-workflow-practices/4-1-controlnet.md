@@ -42,6 +42,16 @@ ControlNet은 참조 이미지를 AI가 이해할 수 있는 지시로 변환하
 * **ComfyUI ControlNet Auxiliary Preprocessors**
 * Comfy Manager → Custom Nodes Manager에서 검색하여 설치
 
+
+
+## 워크플로우 및 Openpose 이미지
+
+아래 워크플로우와 이미지를 다운로드합니다.
+
+{% file src="../../.gitbook/assets/sd1.5-controlnet-basic-comfyui-wiki.com.json" %}
+
+<figure><img src="../../.gitbook/assets/sd1.5-openpose-controlnet-input-preprocess.cc8b9707.png" alt=""><figcaption></figcaption></figure>
+
 ## 실습 1: 전처리기 없이 ControlNet 사용
 
 이미 전처리된 OpenPose 이미지를 직접 사용하는 방법입니다.
@@ -106,6 +116,8 @@ Queue Prompt 클릭하여 실행
 
 일반 사진을 OpenPose로 자동 변환하여 사용하는 방법입니다.
 
+{% file src="../../.gitbook/assets/SD1.5-controlnet-openpose-preprocessor-comfyui-wiki.com.json" %}
+
 ### Step 1: 플러그인 설치 확인
 
 1. Comfy Manager → Custom Nodes Manager
@@ -166,7 +178,7 @@ Negative: ugly, deformed, bad anatomy, extra limbs, blurry, low quality
 
 ### Scribble ControlNet 예제
 
-![ComfyUI 공식 Scribble ControlNet 워크플로우](../../.gitbook/assets/controlnet_example.png)
+<figure><img src="../../.gitbook/assets/controlnet_example (1).png" alt=""><figcaption></figcaption></figure>
 
 위 워크플로우에 사용된 입력 이미지:
 
@@ -174,7 +186,7 @@ Negative: ugly, deformed, bad anatomy, extra limbs, blurry, low quality
 
 ### Depth ControlNet 예제
 
-![ComfyUI 공식 Depth ControlNet 워크플로우](../../.gitbook/assets/depth_controlnet.png)
+<figure><img src="../../.gitbook/assets/depth_controlnet (1).png" alt=""><figcaption></figcaption></figure>
 
 위 워크플로우에 사용된 입력 이미지 (Depth Map):
 
