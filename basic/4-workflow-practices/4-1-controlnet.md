@@ -1,12 +1,10 @@
-# #1-4-1. ControlNet
+# #1-3-1. ControlNet
 
 ## ControlNet이란?
 
 ControlNet은 참조 이미지를 AI가 이해할 수 있는 지시로 변환하는 도구입니다. 이미지의 구조, 포즈, 윤곽선 등을 정밀하게 제어할 수 있게 해줍니다.
 
-
-
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 ### ControlNet의 핵심 개념
 
@@ -16,8 +14,8 @@ ControlNet은 참조 이미지를 AI가 이해할 수 있는 지시로 변환하
 
 ## ControlNet V1.1 주요 제어 유형
 
-| 유형           | 모델                             | 설명          | 주요 용도          |
-| ------------ | ------------------------------ | ----------- | -------------- |
+| 유형       | 모델                             | 설명          | 주요 용도          |
+| -------- | ------------------------------ | ----------- | -------------- |
 | Canny    | control\_v11p\_sd15\_canny     | 엣지(경계선) 감지  | 정밀한 라인 아트, 건축물 |
 | Depth    | control\_v11f1p\_sd15\_depth   | 깊이 맵 추출     | 전경/배경 깊이 제어    |
 | OpenPose | control\_v11p\_sd15\_openpose  | 인체 포즈 인식    | 인물 자세 제어       |
@@ -53,9 +51,7 @@ ControlNet은 참조 이미지를 AI가 이해할 수 있는 지시로 변환하
 1. 기본 txt2img 워크플로우 로드
 2. Load Checkpoint, CLIP Text Encode, KSampler, VAE Decode 노드 확인
 
-
-
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Load ControlNet Model 노드 추가
 
@@ -74,7 +70,7 @@ ControlNet은 참조 이미지를 AI가 이해할 수 있는 지시로 변환하
 3. **Load Image의 IMAGE 출력** → **Apply ControlNet의 image 입력**
 4. **Apply ControlNet의 CONDITIONING 출력** → **KSampler의 positive 입력**
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 5: 참조 이미지 로드
 
@@ -82,11 +78,12 @@ ControlNet은 참조 이미지를 AI가 이해할 수 있는 지시로 변환하
 2. OpenPose 전처리된 참조 이미지 업로드
    * 예: 흰색 배경에 스켈레톤 라인이 그려진 이미지
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 6: 강도(strength) 조정
 
 Apply ControlNet 노드의 `strength` 값 조정:
+
 * 1.0: 최대 제어 (참조 이미지를 거의 그대로 따름)
 * 0.7: 강한 제어 (일반적인 권장값)
 * 0.5: 중간 제어
@@ -103,7 +100,7 @@ Negative: ugly, deformed, bad anatomy, blurry
 
 Queue Prompt 클릭하여 실행
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 실습 2: 전처리기 사용 ControlNet
 
@@ -121,7 +118,7 @@ Queue Prompt 클릭하여 실행
 1. **Load Image** 노드 추가
 2. 일반 인물 사진 업로드 (포즈가 명확한 사진)
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: OpenPose Preprocessor 노드 추가
 
@@ -134,9 +131,7 @@ Queue Prompt 클릭하여 실행
 1. **Load Image의 IMAGE 출력** → **OpenPose Pose의 image 입력**
 2. **OpenPose Pose의 IMAGE 출력** → **Apply ControlNet의 image 입력**
 
-
-
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 5: 전처리기 설정
 
@@ -187,7 +182,7 @@ Negative: ugly, deformed, bad anatomy, extra limbs, blurry, low quality
 
 > 워크플로우 이미지를 다운로드하여 ComfyUI 캔버스에 드래그하면 자동으로 워크플로우가 로드됩니다.
 
----
+***
 
 ## 다양한 ControlNet 활용 예시
 
@@ -209,9 +204,7 @@ Negative: blurry, distorted, low quality
 * `low_threshold`: 100
 * `high_threshold`: 200
 
-
-
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Depth Control
 

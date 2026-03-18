@@ -8,16 +8,16 @@
 
 Model Manager에서 다음 모델을 다운로드합니다:
 
-| 모델                                                     | 다운로드 링크                                                                   |
-| ------------------------------------------------------ | ------------------------------------------------------------------------- |
-| LTX-2-Image2Vid-Adapter.safetensors                    | https://huggingface.co/MachineDelusions/LTX-2\_Image2Video\_Adapter\_LoRa |
-| ltx-2-19b-ic-lora-detailer.safetensors                 | https://huggingface.co/Lightricks/LTX-2-19b-IC-LoRA-Detailer              |
-| ltx-2-19b-distilled-fp8\_transformer\_only.safetensors | https://huggingface.co/Kijai/LTXV2\_comfy                                 |
-| ltx-2-19b-embeddings\_connector\_bf16.safetensors      | https://huggingface.co/Kijai/LTXV2\_comfy                                 |
-| LTX2\_audio\_vae\_bf16.safetensors                     | https://huggingface.co/Kijai/LTXV2\_comfy                                 |
-| LTX2\_video\_vae\_bf16.safetensors                     | https://huggingface.co/Kijai/LTXV2\_comfy                                 |
-| gemma\_3\_12B\_it\_fp8\_e4m3fn.safetensors             | https://huggingface.co/GitMylo/LTX-2-comfy\_gemma\_fp8\_e4m3fn            |
-| ltx-2-spatial-upscaler-x2-1.0.safetensors              | https://huggingface.co/Lightricks/LTX-2                                   |
+| 모델                                                                | 다운로드 링크                                                                                  |                                                                           |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| LTX-2-Image2Vid-Adapter.safetensors                               | https://huggingface.co/MachineDelusions/LTX-2\_Image2Video\_Adapter\_LoRa                | <img src="../.gitbook/assets/image (7).png" alt="" data-size="original">  |
+| ltx-2-19b-ic-lora-detailer.safetensors                            | https://huggingface.co/Lightricks/LTX-2-19b-IC-LoRA-Detailer                             | <img src="../.gitbook/assets/image (8).png" alt="" data-size="original">  |
+| ltx-2.3-22b-distilled\_transformer\_only\_fp8\_scaled.safetensors | [https://huggingface.co/Kijai/LTX2.3\_comfy ](https://huggingface.co/Kijai/LTX2.3_comfy) | <img src="../.gitbook/assets/image (9).png" alt="" data-size="original">  |
+| LTX23\_audio\_vae\_bf16.safetensors                               | [https://huggingface.co/Kijai/LTX2.3\_comfy ](https://huggingface.co/Kijai/LTX2.3_comfy) | <img src="../.gitbook/assets/image (11).png" alt="" data-size="original"> |
+| tx-2.3\_text\_projection\_bf16.safetensors                        | [https://huggingface.co/Kijai/LTX2.3\_comfy ](https://huggingface.co/Kijai/LTX2.3_comfy) | <img src="../.gitbook/assets/image (91).png" alt="" data-size="original"> |
+| LTX2\_video\_vae\_bf16.safetensors                                | [https://huggingface.co/Kijai/LTX2.3\_comfy ](https://huggingface.co/Kijai/LTX2.3_comfy) | <img src="../.gitbook/assets/image (90).png" alt="" data-size="original"> |
+| gemma\_3\_12B\_it\_fp8\_e4m3fn.safetensors                        | https://huggingface.co/GitMylo/LTX-2-comfy\_gemma\_fp8\_e4m3fn                           | <img src="../.gitbook/assets/image (92).png" alt="" data-size="original"> |
+| ltx-2.3-spatial-upscaler-x2-1.1.safetensors                       | [https://huggingface.co/Lightricks/LTX-2.3 ](https://huggingface.co/Lightricks/LTX-2.3)  | <img src="../.gitbook/assets/image (93).png" alt="" data-size="original"> |
 
 ## 실행
 
